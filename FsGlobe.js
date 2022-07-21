@@ -31,8 +31,8 @@ function FsGlobe() {
   const near = 0.1;
   const far = 10;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-  camera.position.z = 1.25;
-  camera.position.y = 1.15;
+  camera.position.z = 1.20;
+  camera.position.y = 1.10;
 
   const controls = new THREE.OrbitControls(camera, canvas);
   controls.enableDamping = true;
