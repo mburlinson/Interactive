@@ -215,7 +215,7 @@ THREE.OrbitControls = function (object, domElement) {
       } else {
         sphericalDelta.set(0, 0, 0);
 
-        panOffset.set(0, 0, 0);
+        panOffset.set(0, 0, 2);
       }
 
       scale = 1;
