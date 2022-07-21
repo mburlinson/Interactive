@@ -66,7 +66,7 @@ THREE.OrbitControls = function (object, domElement) {
 
   // Set to false to disable rotating
   this.enableRotate = true;
-  this.rotateSpeed = 0.5;
+  this.rotateSpeed = 0.25;
 
   // Set to false to disable panning
   this.enablePan = true;
@@ -215,7 +215,7 @@ THREE.OrbitControls = function (object, domElement) {
       } else {
         sphericalDelta.set(0, 0, 0);
 
-        panOffset.set(0, 0, 2);
+        panOffset.set(0, 0, 0);
       }
 
       scale = 1;
