@@ -40,7 +40,7 @@ function FsGlobe() {
   controls.minDistance = 1.2;
   controls.maxDistance = 4;
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.2;
+  controls.autoRotateSpeed = 0.15;
   // //  controls.enableDamping = true;
   //   controls.campingFactor = 0.25;
   controls.enableZoom = false;
