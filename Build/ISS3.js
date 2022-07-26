@@ -1,16 +1,16 @@
 
 
-      var baseURL = "https://www.tysons3d-beta.com";
-      var buildUrl = "https://mburlinson.github.io/tysons-repo/Build";
+      var baseURL = "https://global-dashboard-1.webflow.io/";
+      var buildUrl = "https://mburlinson.github.io/interactive/Build";
       var globalunityinstance = null;
-      var loaderUrl = buildUrl + "/urp66.loader.js";
+      var loaderUrl = buildUrl + "/ISS3.loader.js";
       var config = {
-        dataUrl: buildUrl + "/urp66.data.unityweb",
-        frameworkUrl: buildUrl + "/urp66.framework.js.unityweb",
-        codeUrl: buildUrl + "/urp66.wasm.unityweb",
+        dataUrl: buildUrl + "/ISS3.data.unityweb",
+        frameworkUrl: buildUrl + "/ISS3.framework.js.unityweb",
+        codeUrl: buildUrl + "/ISS3.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Tyson Corner Center",
+        productName: "Global Dashboard",
         productVersion: "1.1",
       };
       var container = document.querySelector("#unity-container");
