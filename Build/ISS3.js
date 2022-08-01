@@ -175,8 +175,8 @@
 
 
 
-   var north_building_on = true;
-   var phase_2_on = false;
+   var norht_building_on = false;
+   var south_building_on = false;
    var phase_2b_on = false;
    var phase_3_on = false;
    var phase_4_on = false;
@@ -200,13 +200,13 @@
       globalunityinstance.SendMessage('Bridge','B110on');
    }
    function sendMessageToUnity1() {
-      if (phase_2_on == false){
-         phase_2_on = true;
+      if (south_building_on == false){
+         south_building_on = true;
       }
       else {
-        phase_2_on = false;
+        south_building_on = false;
       }
-      globalunityinstance.SendMessage('Bridge','MainMenu1');
+      globalunityinstance.SendMessage('Bridge','B110on');
    }
    function sendMessageToUnity2() {
       if (phase_3_on == false){
@@ -350,7 +350,7 @@
    //
    function sendMessageToUnityCloseAll() {
 ////      globalunityinstance.SendMessage('Bridge','CloseAll');
-        if (north_building_on == true) {
+        if (south_building_on == true) {
           $("#north-building")[0].click();
         }
         if (phase_2_on == true) {
