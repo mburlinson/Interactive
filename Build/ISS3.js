@@ -3,11 +3,11 @@
       var baseURL = "https://global-dashboard-1.webflow.io/";
       var buildUrl = "https://mburlinson.github.io/Interactive/Build";
       var globalunityinstance = null;
-      var loaderUrl = buildUrl + "/ISS3.loader.js";
+      var loaderUrl = buildUrl + "/ISS5a.loader.js";
       var config = {
-        dataUrl: buildUrl + "/ISS3.data.unityweb",
-        frameworkUrl: buildUrl + "/ISS3.framework.js.unityweb",
-        codeUrl: buildUrl + "/ISS3.wasm.unityweb",
+        dataUrl: buildUrl + "/ISS5a.data.unityweb",
+        frameworkUrl: buildUrl + "/ISS5a.framework.js.unityweb",
+        codeUrl: buildUrl + "/ISS5a.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Global Dashboard",
