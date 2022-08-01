@@ -127,17 +127,17 @@
      if ((txt.trim().indexOf("Detail") >= 0) || (txt.trim().indexOf("Overview") >= 0)  ){
       setTimeout(function(){
         $("#page-block").show();
-        if (txt.trim() == "Detail0") {
-          document.getElementById("iframe99").src= baseURL + "/phase/phase-1";
+        if (txt.trim() == "B109") {
+          document.getElementById("iframe99").src= baseURL + "/building/";
         }
-        if (txt.trim() == "Detail1") {
-          document.getElementById("iframe99").src= baseURL + "/phase/terrace-d";
+        if (txt.trim() == "B110") {
+          document.getElementById("iframe99").src= baseURL + "/building/sunnyvale-south";
         }
-        if (txt.trim() == "Detail2") {
-          document.getElementById("iframe99").src= baseURL + "/phase/plaza-west";
+        if (txt.trim() == "B112") {
+          document.getElementById("iframe99").src= baseURL + "/phase/sunnyvale-north";
         }
-        if (txt.trim() == "Detail2b") {
-          document.getElementById("iframe99").src= baseURL + "/phase/plaza-west-b";
+        if (txt.trim() == "B140") {
+          document.getElementById("iframe99").src= baseURL + "/phase/ion-building";
         }
         if (txt.trim() == "Detail3") {
           document.getElementById("iframe99").src= baseURL + "/phase/east-end";
@@ -175,7 +175,7 @@
 
 
 
-   var norht_building_on = false;
+   var north_building_on = false;
    var south_building_on = false;
    var phase_2b_on = false;
    var phase_3_on = false;
