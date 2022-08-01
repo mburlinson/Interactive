@@ -2,8 +2,11 @@
  *
  * @param {url} param
  */
+
 function FsGlobe() {
-  const mainContainer = document.querySelector("[fs-3dglobe-element='container']");
+  const mainContainer = document.querySelector(
+    "[fs-3dglobe-element='container']"
+  );
 
   const bgTexture = mainContainer.getAttribute('fs-3dglobe-img');
 
@@ -21,9 +24,13 @@ function FsGlobe() {
   canvas.className = 'canvas-3dglobe-container';
   globeContainer.appendChild(canvas);
 
-  const userInfo = [].slice.call(document.querySelectorAll("[fs-3dglobe-element='tooltip']"));
+  const userInfo = [].slice.call(
+    document.querySelectorAll("[fs-3dglobe-element='tooltip']")
+  );
 
-  const marker = [].slice.call(document.querySelectorAll("[fs-3dglobe-element='pin']"));
+  const marker = [].slice.call(
+    document.querySelectorAll("[fs-3dglobe-element='pin']")
+  );
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
 
   const fov = 60;
@@ -32,7 +39,7 @@ function FsGlobe() {
   const far = 10;
   const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.z = 2.0;
-  camera.position.y = 1.10;
+  camera.position.y = 1.1;
 
   const controls = new THREE.OrbitControls(camera, canvas);
   controls.enableDamping = true;
@@ -53,7 +60,17 @@ function FsGlobe() {
   let renderRequested = false;
   let animationFrame;
 
-  const team = fetchDataFromCollection("[fs-3dglobe-element='list'] .w-dyn-item");
+  function removeInvisibleItems() {
+    const invisibleItems = document.querySelectorAll('.w-condition-invisible');
+
+    invisibleItems.forEach(item => item.remove());
+  }
+
+  removeInvisibleItems();
+
+  const team = fetchDataFromCollection(
+    "[fs-3dglobe-element='list'] .w-dyn-item"
+  );
 
   const loader = new THREE.TextureLoader();
   const texture = loader.load(defaultValue.url, render);
@@ -213,8 +230,8 @@ function FsGlobe() {
       // move the elem to that position
       elem.style.transform = `translate(-50%, -50%) translate(${x}px,${y}px)`;
 
-      //   // set the zIndex for sorting
-      elem.style.zIndex = ((-tempV.z * 0.5 + 0.5) * 100000) | 0;
+      // set the zIndex for sorting
+      // elem.style.zIndex = ((-tempV.z * 0.5 + 0.5) * 100000) | 0;
     }
   }
 
@@ -229,10 +246,46 @@ function FsGlobe() {
     return needResize;
   }
 
+  function pauseRotation() {
+    controls.autoRotateSpeed = 0;
+
+    controls.update();
+  }
+
+  function resumeRotation() {
+    controls.autoRotateSpeed = 0.1;
+
+    controls.update();
+  }
+
+  function handleMarkerMouseOut(evt) {
+    const mapMarker = evt.target;
+
+    resumeRotation();
+    mapMarker.style.zIndex = '1';
+  }
+
+  function handleMarkerHover(evt) {
+    const mapMarker = evt.target;
+
+    pauseRotation();
+    mapMarker.style.zIndex = '100000';
+  }
+
+  function addHoverEvents() {
+    const mapItems = document.querySelectorAll('.map-container');
+
+    mapItems.forEach(item => {
+      item.addEventListener('mouseenter', handleMarkerHover);
+      item.addEventListener('mouseleave', handleMarkerMouseOut);
+    });
+  }
+
   function render() {
     renderRequested = undefined;
 
     animationFrame = requestAnimationFrame(render);
+    addHoverEvents();
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
@@ -290,7 +343,9 @@ function getInfoBox({ url, name, location = 'N/A', role = 'N/A' }) {
 }
 
 function fetchDataFromCollection(collectionWrapper) {
-  const collection = [].slice.call(document.querySelectorAll(collectionWrapper));
+  const collection = [].slice.call(
+    document.querySelectorAll(collectionWrapper)
+  );
 
   // const data = [].slice.call(collection.getElementsByTagName("embed"));
 
@@ -304,9 +359,10 @@ function fetchDataFromCollection(collectionWrapper) {
   //   };
   // });
 
-  return collection.map((elem) => {
+  return collection.map(elem => {
     return {
-      name: (elem.querySelector("[fs-3dglobe-element='name'") || {}).textContent,
+      name: (elem.querySelector("[fs-3dglobe-element='name'") || {})
+        .textContent,
       lat: (elem.querySelector("[fs-3dglobe-element='lat'") || {}).textContent,
       lon: (elem.querySelector("[fs-3dglobe-element='lon'") || {}).textContent,
       url: (elem.querySelector("[fs-3dglobe-element='url'") || {}).textContent,
