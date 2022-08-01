@@ -127,44 +127,17 @@
      if ((txt.trim().indexOf("Detail") >= 0) || (txt.trim().indexOf("Overview") >= 0)  ){
       setTimeout(function(){
         $("#page-block").show();
-        if (txt.trim() == "B109") {
-          document.getElementById("iframe99").src= baseURL + "/building/";
+        if (txt.trim() == "b109") {
+          document.getElementById("iframe99").src= baseURL + "/building/b109";
         }
-        if (txt.trim() == "B110") {
-          document.getElementById("iframe99").src= baseURL + "/building/sunnyvale-south";
+        if (txt.trim() == "b110") {
+          document.getElementById("iframe99").src= baseURL + "/building/b110";
         }
-        if (txt.trim() == "B112") {
-          document.getElementById("iframe99").src= baseURL + "/phase/sunnyvale-north";
+        if (txt.trim() == "b112") {
+          document.getElementById("iframe99").src= baseURL + "/building/b112";
         }
-        if (txt.trim() == "B140") {
-          document.getElementById("iframe99").src= baseURL + "/phase/ion-building";
-        }
-        if (txt.trim() == "Detail3") {
-          document.getElementById("iframe99").src= baseURL + "/phase/east-end";
-        }
-        if (txt.trim() == "Detail4") {
-          document.getElementById("iframe99").src= baseURL + "/phase/terrace-c";
-        }
-        if (txt.trim() == "Detail5") {
-          document.getElementById("iframe99").src= baseURL + "/phase/j-block";
-        }
-        if (txt.trim() == "Detail6") {
-          document.getElementById("iframe99").src= baseURL + "/phase/leesburg-pike";
-        }
-        if (txt.trim() == "Detail7") {
-          document.getElementById("iframe99").src= baseURL + "/phase/lux-entry";
-        }
-        if (txt.trim() == "Detail8") {
-          document.getElementById("iframe99").src= baseURL + "/phase/terrace-a";
-        }
-        if (txt.trim() == "Detail9") {
-          document.getElementById("iframe99").src= baseURL + "/phase/pearl-parcel";
-        }
-        if (txt.trim() == "Detail10") {
-          document.getElementById("iframe99").src= baseURL + "/phase/fashion-blvd";
-        }
-        if (txt.trim() == "Overview") {
-          document.getElementById("iframe99").src= baseURL + "/phase/overview";
+        if (txt.trim() == "b140") {
+          document.getElementById("iframe99").src= baseURL + "/building/b140";
         }
 
        // location.href="/page-2";
@@ -175,10 +148,10 @@
 
 
 
-   var north_building_on = false;
-   var south_building_on = false;
-   var phase_2b_on = false;
-   var phase_3_on = false;
+   var b109_on = false;
+   var b110_on = false;
+   var b112_on = false;
+   var b140_on = false;
    var phase_4_on = false;
    var phase_5_on = false;
    var phase_6_on = false;
@@ -190,124 +163,40 @@
    //
 
    function sendMessageToUnity0() {
-      if (north_building_on == false){
-      	north_building_on = true;
+      if (b109_on == false){
+      	b109_on = true;
       }
       else {
-        north_building_on = false;
+        b109_on = false;
       }
-
-      globalunityinstance.SendMessage('Bridge','B110on');
+      globalunityinstance.SendMessage('Bridge','B109on');
    }
    function sendMessageToUnity1() {
-      if (south_building_on == false){
-         south_building_on = true;
+      if (b110_on == false){
+         b110_on = true;
       }
       else {
-        south_building_on = false;
+        b110_on = false;
       }
       globalunityinstance.SendMessage('Bridge','B110on');
    }
    function sendMessageToUnity2() {
-      if (phase_3_on == false){
-         phase_3_on = true;
+      if (b112_on == false){
+         b112_on = true;
       }
       else {
-        phase_3_on = false;
+        b112_on = false;
       }
-      if (phase_2b_on == false || phase_3_on == true){
-        globalunityinstance.SendMessage('Bridge','MainMenu2');
-        if (phase_2b_on==true){
-           $("#phase-3b-button")[0].click();
-        }
-      }
-   }
-   function sendMessageToUnity2b() {
-      if (phase_2b_on == false){
-         phase_2b_on = true;
-      }
-      else {
-        phase_2b_on = false;
-      }
-      if (phase_3_on == false || phase_2b_on == true){
-        globalunityinstance.SendMessage('Bridge','MainMenu2b');
-        if (phase_3_on==true){
-           $("#phase-3-button")[0].click();
-        }
-      }
-      
+      globalunityinstance.SendMessage('Bridge','B112on');
    }
    function sendMessageToUnity3() {
-      if (phase_4_on == false){
-         phase_4_on = true;
+      if (b140_on == false){
+         b140_on = true;
       }
       else {
-        phase_4_on = false;
+        b140_on = false;
       }
-      globalunityinstance.SendMessage('Bridge','MainMenu3');
-   }
-   function sendMessageToUnity4() {
-      if (phase_5_on == false){
-         phase_5_on = true;
-      }
-      else {
-        phase_5_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','MainMenu4');
-   }
-   function sendMessageToUnity5() {
-      if (phase_6_on == false){
-         phase_6_on = true;
-      }
-      else {
-        phase_6_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','MainMenu5');
-   }
-   function sendMessageToUnity6() {
-      if (phase_7_on == false){
-         phase_7_on = true;
-      }
-      else {
-        phase_7_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','MainMenu6');
-   }
-   function sendMessageToUnity7() {
-      if (phase_8_on == false){
-         phase_8_on = true;
-      }
-      else {
-        phase_8_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','MainMenu7');
-   }
-   function sendMessageToUnity8() {
-      if (phase_9_on == false){
-         phase_9_on = true;
-      }
-      else {
-        phase_9_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','MainMenu8');
-   }
-   function sendMessageToUnity9() {
-      if (phase_10_on == false){
-         phase_10_on = true;
-      }
-      else {
-        phase_10_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','MainMenu9');
-   }
-   function sendMessageToUnity10() {
-      if (phase_11_on == false){
-         phase_11_on = true;
-      }
-      else {
-        phase_11_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','MainMenu10');
+      globalunityinstance.SendMessage('Bridge','b140on');
    }
    function sendMessageToUnityGoBack() {
       globalunityinstance.SendMessage('Bridge','GoBack');
@@ -350,17 +239,17 @@
    //
    function sendMessageToUnityCloseAll() {
 ////      globalunityinstance.SendMessage('Bridge','CloseAll');
-        if (south_building_on == true) {
-          $("#north-building")[0].click();
+        if (b109_on == true) {
+          $("#b109")[0].click();
         }
-        if (phase_2_on == true) {
-          $("#phase-2-button")[0].click();
+        if (b110_on == true) {
+          $("#b110")[0].click();
         }
-        if (phase_3_on == true) {
-          $("#phase-3-button")[0].click();
+        if (b112_on == true) {
+          $("#b112")[0].click();
         }
-        if (phase_2b_on == true) {
-          $("#phase-3b-button")[0].click();
+        if (b140_on == true) {
+          $("#b140")[0].click();
         }
         if (phase_4_on == true) {
           $("#phase-4-button")[0].click();
@@ -417,16 +306,16 @@
 
 
 function KillIframe(){
-  if ( $("#iframe99")[0].src.indexOf("phase-1") > 0){
+  if ( $("#iframe99")[0].src.indexOf("b109") > 0){
   	sendMessageToUnityGoBack();
   }
-  if ( $("#iframe99")[0].src.indexOf("terrace-d") > 0){
+  if ( $("#iframe99")[0].src.indexOf("b110") > 0){
   	sendMessageToUnityGoBack();
   }
-  if ( $("#iframe99")[0].src.indexOf("plaza-west") > 0){
+  if ( $("#iframe99")[0].src.indexOf("b112") > 0){
   	sendMessageToUnityGoBack();
   }
-   if ( $("#iframe99")[0].src.indexOf("plaza-west-b") > 0){
+   if ( $("#iframe99")[0].src.indexOf("b140") > 0){
    sendMessageToUnityGoBack();
   }
   if ( $("#iframe99")[0].src.indexOf("east-end") > 0){
