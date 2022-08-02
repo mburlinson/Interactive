@@ -3,11 +3,11 @@
       var baseURL = "https://global-dashboard-1.webflow.io/";
       var buildUrl = "https://mburlinson.github.io/Interactive/Build";
       var globalunityinstance = null;
-      var loaderUrl = buildUrl + "/ISS.loader.js";
+      var loaderUrl = buildUrl + "/ISA.loader.js";
       var config = {
-        dataUrl: buildUrl + "/ISS.data.unityweb",
-        frameworkUrl: buildUrl + "/ISS.framework.js.unityweb",
-        codeUrl: buildUrl + "/ISS.wasm.unityweb",
+        dataUrl: buildUrl + "/ISA.data.unityweb",
+        frameworkUrl: buildUrl + "/ISA.framework.js.unityweb",
+        codeUrl: buildUrl + "/ISA.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Global Dashboard",
@@ -124,19 +124,19 @@
           $("#phasecard10hide")[0].click();   
        		}   
 					
-     if ((txt.trim().indexOf("Detail") >= 0) || (txt.trim().indexOf("Overview") >= 0)  ){
+     if ((txt.trim().indexOf("") >= 0) || (txt.trim().indexOf("") >= 0)  ){
       setTimeout(function(){
         $("#page-block").show();
-        if (txt.trim() == "b109") {
+        if (txt.trim() == "B109") {
           document.getElementById("iframe99").src= baseURL + "/building/b109";
         }
-        if (txt.trim() == "b110") {
+        if (txt.trim() == "B110") {
           document.getElementById("iframe99").src= baseURL + "/building/b110";
         }
-        if (txt.trim() == "b112") {
+        if (txt.trim() == "B112") {
           document.getElementById("iframe99").src= baseURL + "/building/b112";
         }
-        if (txt.trim() == "b140") {
+        if (txt.trim() == "B140") {
           document.getElementById("iframe99").src= baseURL + "/building/b140";
         }
 
@@ -196,7 +196,7 @@
       else {
         b140_on = false;
       }
-      globalunityinstance.SendMessage('Bridge','b140on');
+      globalunityinstance.SendMessage('Bridge','B140on');
    }
    function sendMessageToUnityGoBack() {
       globalunityinstance.SendMessage('Bridge','GoBack');
@@ -240,16 +240,16 @@
    function sendMessageToUnityCloseAll() {
 ////      globalunityinstance.SendMessage('Bridge','CloseAll');
         if (b109_on == true) {
-          $("#b109")[0].click();
+          $("#B109")[0].click();
         }
         if (b110_on == true) {
-          $("#b110")[0].click();
+          $("#B110")[0].click();
         }
         if (b112_on == true) {
-          $("#b112")[0].click();
+          $("#B112")[0].click();
         }
         if (b140_on == true) {
-          $("#b140")[0].click();
+          $("#B140")[0].click();
         }
         if (phase_4_on == true) {
           $("#phase-4-button")[0].click();
@@ -306,16 +306,16 @@
 
 
 function KillIframe(){
-  if ( $("#iframe99")[0].src.indexOf("b109") > 0){
+  if ( $("#iframe99")[0].src.indexOf("B109") > 0){
   	sendMessageToUnityGoBack();
   }
-  if ( $("#iframe99")[0].src.indexOf("b110") > 0){
+  if ( $("#iframe99")[0].src.indexOf("B110") > 0){
   	sendMessageToUnityGoBack();
   }
-  if ( $("#iframe99")[0].src.indexOf("b112") > 0){
+  if ( $("#iframe99")[0].src.indexOf("B112") > 0){
   	sendMessageToUnityGoBack();
   }
-   if ( $("#iframe99")[0].src.indexOf("b140") > 0){
+   if ( $("#iframe99")[0].src.indexOf("B140") > 0){
    sendMessageToUnityGoBack();
   }
   if ( $("#iframe99")[0].src.indexOf("east-end") > 0){
