@@ -53,80 +53,9 @@
       };
       document.body.appendChild(script);
  
-    ///this section helps with the hover phase cards.
 
   function receiveMessageFromUnity(txt) {
 
-    /* 
-     
-        if (txt.trim() == "over0") {
-          $("#phasecard0show")[0].click();
-          }
-       if (txt.trim() == "out0") {
-          $("#phasecard0hide")[0].click();
-          }
-       if (txt.trim() == "over1") {
-          $("#phasecard1show")[0].click();
-          }
-       if (txt.trim() == "out1") {
-          $("#phasecard1hide")[0].click();
-          }
-       if (txt.trim() == "over2") {
-          $("#phasecard2show")[0].click();
-          }
-       if (txt.trim() == "out2") {
-          $("#phasecard2hide")[0].click();
-          } 
-       if (txt.trim() == "over3") {
-          $("#phasecard3show")[0].click();
-          }
-       if (txt.trim() == "out3") {
-          $("#phasecard3hide")[0].click();
-          }    
-       if (txt.trim() == "over4") {
-          $("#phasecard4show")[0].click();
-          }
-       if (txt.trim() == "out4") {
-          $("#phasecard4hide")[0].click();   
-       	  }	
-       if (txt.trim() == "over5") {
-          $("#phasecard5show")[0].click();
-          }
-       if (txt.trim() == "out5") {
-          $("#phasecard5hide")[0].click();   
-       		}	
-       if (txt.trim() == "over6") {
-          $("#phasecard6show")[0].click();
-          }
-       if (txt.trim() == "out6") {
-          $("#phasecard6hide")[0].click();   
-       		} 
-       if (txt.trim() == "over7") {
-          $("#phasecard7show")[0].click();
-          }
-       if (txt.trim() == "out7") {
-          $("#phasecard7hide")[0].click();   
-       		} 
-       if (txt.trim() == "over8") {
-          $("#phasecard8show")[0].click();
-          }
-       if (txt.trim() == "out8") {
-          $("#phasecard8hide")[0].click();   
-       		}   
-       if (txt.trim() == "over9") {
-          $("#phasecard9show")[0].click();
-          }
-       if (txt.trim() == "out9") {
-          $("#phasecard9hide")[0].click();   
-       		}   
-       if (txt.trim() == "over10") {
-          $("#phasecard10show")[0].click();
-          }
-       if (txt.trim() == "out10") {
-          $("#phasecard10hide")[0].click();   
-       		}   
-
-            */
 					
      if ((txt.trim().indexOf("") >= 0) || (txt.trim().indexOf("") >= 0)  ){
       setTimeout(function(){
@@ -144,8 +73,7 @@
           document.getElementById("iframe99").src= baseURL + "/building/b140";
         }
 
-       // location.href="/page-2";
-       //
+       
         },4000);
        }
    }
@@ -156,14 +84,7 @@
    var b110_on = false;
    var b112_on = false;
    var b140_on = false;
-   var phase_4_on = false;
-   var phase_5_on = false;
-   var phase_6_on = false;
-   var phase_7_on = false;
-   var phase_8_on = false;
-   var phase_9_on = false;
-   var phase_10_on = false;
-   var phase_11_on = false;
+  
    //
 
    function sendMessageToUnity0() {
@@ -206,7 +127,7 @@
       globalunityinstance.SendMessage('Bridge','GoBack');
    }
    
-   //
+   /*
    function sendMessageToUnityCloseAll() {
 ////      globalunityinstance.SendMessage('Bridge','CloseAll');
         if (b109_on == true) {
@@ -221,32 +142,9 @@
         if (b140_on == true) {
           $("#B140")[0].click();
         }
-        
+       
    }
-              function sendMessageToUnitySubwayOff() {
-      globalunityinstance.SendMessage('Bridge','SubwayOff');
-   }
-              function sendMessageToUnityView1() {
-      globalunityinstance.SendMessage('Bridge','View1');
-   }
-              function sendMessageToUnityView2() {
-      globalunityinstance.SendMessage('Bridge','View2');
-   }      
-              function sendMessageToUnityView3() {
-      globalunityinstance.SendMessage('Bridge','View3');
-   }    
-              function sendMessageToUnityView4() {
-      globalunityinstance.SendMessage('Bridge','View4');
-   }    
-              function sendMessageToUnityView5() {
-      globalunityinstance.SendMessage('Bridge','View5');
-   }   
-              function sendMessageToUnityView6() {
-      globalunityinstance.SendMessage('Bridge','View6');
-   } 
-            function sendMessageToUnityOrbit() {
-      globalunityinstance.SendMessage('Bridge','Orbit');
-   }
+      */ 
 
 function KillIframe(){
   if ( $("#iframe99")[0].src.indexOf("B109") > 0){
