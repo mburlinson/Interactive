@@ -127,7 +127,7 @@
       globalunityinstance.SendMessage('Bridge','GoBack');
    }
    
-   /*
+   /* not needed
    function sendMessageToUnityCloseAll() {
 ////      globalunityinstance.SendMessage('Bridge','CloseAll');
         if (b109_on == true) {
