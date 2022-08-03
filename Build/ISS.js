@@ -55,7 +55,9 @@
  
     ///this section helps with the hover phase cards.
 
-   function receiveMessageFromUnity(txt) {
+  function receiveMessageFromUnity(txt) {
+
+    /* 
      
         if (txt.trim() == "over0") {
           $("#phasecard0show")[0].click();
@@ -123,6 +125,8 @@
        if (txt.trim() == "out10") {
           $("#phasecard10hide")[0].click();   
        		}   
+
+            */
 					
      if ((txt.trim().indexOf("") >= 0) || (txt.trim().indexOf("") >= 0)  ){
       setTimeout(function(){
@@ -148,7 +152,7 @@
 
 
 
-   var b109_on = true;
+   var b109_on = false;
    var b110_on = false;
    var b112_on = false;
    var b140_on = false;
@@ -201,41 +205,7 @@
    function sendMessageToUnityGoBack() {
       globalunityinstance.SendMessage('Bridge','GoBack');
    }
-   /*
-   function sendMessageToUnitydetail1() {
-      globalunityinstance.SendMessage('bldg_f_1a','OnMouseDown');
-   }
-   function sendMessageToUnitydetail2() {
-      globalunityinstance.SendMessage('bldg_f_2','OnMouseDown');
-   }
-   function sendMessageToUnitydetail2b() {
-      globalunityinstance.SendMessage('bldg_f_2_b','OnMouseDown');
-   }
-   function sendMessageToUnitydetail3() {
-      globalunityinstance.SendMessage('amc_future','OnMouseDown');
-   }
-   function sendMessageToUnitydetail4() {
-      globalunityinstance.SendMessage('bldg_f_4','OnMouseDown');
-   }
-   function sendMessageToUnitydetail5() {
-      globalunityinstance.SendMessage('bldg_f_5','OnMouseDown');
-   }
-   function sendMessageToUnitydetail6() {
-      globalunityinstance.SendMessage('bldg_f_6','OnMouseDown');
-   }
-   function sendMessageToUnitydetail7() {
-      globalunityinstance.SendMessage('bldg_f_7','OnMouseDown');
-   }
-   function sendMessageToUnitydetail8() {
-      globalunityinstance.SendMessage('PH4abc','OnMouseDown');
-   }
-   function sendMessageToUnitydetail9() {
-      globalunityinstance.SendMessage('bldg_f_9','OnMouseDown');
-   }
-   function sendMessageToUnitydetail10() {
-      globalunityinstance.SendMessage('bldg_f_10','OnMouseDown');
-   }
-   */
+   
    //
    function sendMessageToUnityCloseAll() {
 ////      globalunityinstance.SendMessage('Bridge','CloseAll');
@@ -250,30 +220,6 @@
         }
         if (b140_on == true) {
           $("#B140")[0].click();
-        }
-        if (phase_4_on == true) {
-          $("#phase-4-button")[0].click();
-        }
-        if (phase_5_on == true) {
-          $("#phase-5-button")[0].click();
-        }
-        if (phase_6_on == true) {
-          $("#phase-6-button")[0].click();
-        }
-        if (phase_7_on == true) {
-          $("#phase-7-button")[0].click();
-        }
-        if (phase_8_on == true) {
-          $("#phase-8-button")[0].click();
-        }
-        if (phase_9_on == true) {
-          $("#phase-9-button")[0].click();
-        }
-        if (phase_10_on == true) {
-          $("#phase-10-button")[0].click();
-        }
-        if (phase_11_on == true) {
-          $("#phase-11-button")[0].click();
         }
         
    }
@@ -302,9 +248,6 @@
       globalunityinstance.SendMessage('Bridge','Orbit');
    }
 
-//
-
-
 function KillIframe(){
   if ( $("#iframe99")[0].src.indexOf("B109") > 0){
   	sendMessageToUnityGoBack();
@@ -317,33 +260,6 @@ function KillIframe(){
   }
    if ( $("#iframe99")[0].src.indexOf("B140") > 0){
    sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("east-end") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("terrace-c") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("j-block") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("leesburg-pike") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("lux-entry") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("terrace-a") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("pearl-parcel") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("fashion-blvd") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("overview") > 0){
-    sendMessageToUnityGoBack();
   }
   $("#iframe99")[0].src ="";
 }
