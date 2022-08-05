@@ -61,10 +61,10 @@
       setTimeout(function(){
         $("#page-block").show();
         if (txt.trim() == "BTrain") {
-          document.getElementById("iframe99").src= baseURL + "/building/BTrain";
+          document.getElementById("iframe99").src= baseURL + "/building/training-center";
         }
         if (txt.trim() == "BWest") {
-          document.getElementById("iframe99").src= baseURL + "/building/BWest";
+          document.getElementById("iframe99").src= baseURL + "/building/assembly-building";
         }
 
        
