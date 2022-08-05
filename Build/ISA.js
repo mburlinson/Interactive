@@ -60,17 +60,11 @@
      if ((txt.trim().indexOf("") >= 0) || (txt.trim().indexOf("") >= 0)  ){
       setTimeout(function(){
         $("#page-block").show();
-        if (txt.trim() == "B109") {
-          document.getElementById("iframe99").src= baseURL + "/building/b109";
+        if (txt.trim() == "BTrain") {
+          document.getElementById("iframe99").src= baseURL + "/building/BTrain";
         }
-        if (txt.trim() == "B110") {
-          document.getElementById("iframe99").src= baseURL + "/building/b110";
-        }
-        if (txt.trim() == "B112") {
-          document.getElementById("iframe99").src= baseURL + "/building/b112";
-        }
-        if (txt.trim() == "B140") {
-          document.getElementById("iframe99").src= baseURL + "/building/b140";
+        if (txt.trim() == "BWest") {
+          document.getElementById("iframe99").src= baseURL + "/building/BWest";
         }
 
        
@@ -80,48 +74,29 @@
 
 
 
-   var b109_on = false;
-   var b110_on = false;
-   var b112_on = false;
-   var b140_on = false;
+   var BTrainOn = false;
+   var BWestOn = false;
+
   
    //
 
    function sendMessageToUnity0() {
-      if (b109_on == false){
-         b109_on = true;
+      if (BTrainOn == false){
+         BTrainOn = true;
       }
       else {
-        b109_on = false;
+        BTrainOn = false;
       }
-      globalunityinstance.SendMessage('Bridge','B109on');
+      globalunityinstance.SendMessage('Bridge','BTrainOn');
    }
    function sendMessageToUnity1() {
-      if (b110_on == false){
-         b110_on = true;
+      if (BWestOn == false){
+         BWestOn = true;
       }
       else {
-        b110_on = false;
+        BWestOn = false;
       }
-      globalunityinstance.SendMessage('Bridge','B110on');
-   }
-   function sendMessageToUnity2() {
-      if (b112_on == false){
-         b112_on = true;
-      }
-      else {
-        b112_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','B112on');
-   }
-   function sendMessageToUnity3() {
-      if (b140_on == false){
-         b140_on = true;
-      }
-      else {
-        b140_on = false;
-      }
-      globalunityinstance.SendMessage('Bridge','B140on');
+      globalunityinstance.SendMessage('Bridge','BWestOn');
    }
    function sendMessageToUnityGoBack() {
       globalunityinstance.SendMessage('Bridge','GoBack');
@@ -147,16 +122,10 @@
       */ 
 
 function KillIframe(){
-  if ( $("#iframe99")[0].src.indexOf("B109") > 0){
+  if ( $("#iframe99")[0].src.indexOf("BTrain") > 0){
    sendMessageToUnityGoBack();
   }
-  if ( $("#iframe99")[0].src.indexOf("B110") > 0){
-   sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("B112") > 0){
-   sendMessageToUnityGoBack();
-  }
-   if ( $("#iframe99")[0].src.indexOf("B140") > 0){
+  if ( $("#iframe99")[0].src.indexOf("BWest") > 0){
    sendMessageToUnityGoBack();
   }
   $("#iframe99")[0].src ="";
