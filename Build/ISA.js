@@ -53,77 +53,10 @@
       };
       document.body.appendChild(script);
  
-    ///this section helps with the hover phase cards.
 
-   function receiveMessageFromUnity(txt) {
-     
-        if (txt.trim() == "over0") {
-          $("#phasecard0show")[0].click();
-          }
-       if (txt.trim() == "out0") {
-          $("#phasecard0hide")[0].click();
-          }
-       if (txt.trim() == "over1") {
-          $("#phasecard1show")[0].click();
-          }
-       if (txt.trim() == "out1") {
-          $("#phasecard1hide")[0].click();
-          }
-       if (txt.trim() == "over2") {
-          $("#phasecard2show")[0].click();
-          }
-       if (txt.trim() == "out2") {
-          $("#phasecard2hide")[0].click();
-          } 
-       if (txt.trim() == "over3") {
-          $("#phasecard3show")[0].click();
-          }
-       if (txt.trim() == "out3") {
-          $("#phasecard3hide")[0].click();
-          }    
-       if (txt.trim() == "over4") {
-          $("#phasecard4show")[0].click();
-          }
-       if (txt.trim() == "out4") {
-          $("#phasecard4hide")[0].click();   
-       	  }	
-       if (txt.trim() == "over5") {
-          $("#phasecard5show")[0].click();
-          }
-       if (txt.trim() == "out5") {
-          $("#phasecard5hide")[0].click();   
-       		}	
-       if (txt.trim() == "over6") {
-          $("#phasecard6show")[0].click();
-          }
-       if (txt.trim() == "out6") {
-          $("#phasecard6hide")[0].click();   
-       		} 
-       if (txt.trim() == "over7") {
-          $("#phasecard7show")[0].click();
-          }
-       if (txt.trim() == "out7") {
-          $("#phasecard7hide")[0].click();   
-       		} 
-       if (txt.trim() == "over8") {
-          $("#phasecard8show")[0].click();
-          }
-       if (txt.trim() == "out8") {
-          $("#phasecard8hide")[0].click();   
-       		}   
-       if (txt.trim() == "over9") {
-          $("#phasecard9show")[0].click();
-          }
-       if (txt.trim() == "out9") {
-          $("#phasecard9hide")[0].click();   
-       		}   
-       if (txt.trim() == "over10") {
-          $("#phasecard10show")[0].click();
-          }
-       if (txt.trim() == "out10") {
-          $("#phasecard10hide")[0].click();   
-       		}   
-					
+  function receiveMessageFromUnity(txt) {
+
+               
      if ((txt.trim().indexOf("") >= 0) || (txt.trim().indexOf("") >= 0)  ){
       setTimeout(function(){
         $("#page-block").show();
@@ -140,31 +73,23 @@
           document.getElementById("iframe99").src= baseURL + "/building/b140";
         }
 
-       // location.href="/page-2";
-       //
-        },4000);
+       
+        },2500);
        }
    }
 
 
 
-   var b109_on = true;
+   var b109_on = false;
    var b110_on = false;
    var b112_on = false;
    var b140_on = false;
-   var phase_4_on = false;
-   var phase_5_on = false;
-   var phase_6_on = false;
-   var phase_7_on = false;
-   var phase_8_on = false;
-   var phase_9_on = false;
-   var phase_10_on = false;
-   var phase_11_on = false;
+  
    //
 
    function sendMessageToUnity0() {
       if (b109_on == false){
-      	b109_on = true;
+         b109_on = true;
       }
       else {
         b109_on = false;
@@ -201,42 +126,8 @@
    function sendMessageToUnityGoBack() {
       globalunityinstance.SendMessage('Bridge','GoBack');
    }
-   /*
-   function sendMessageToUnitydetail1() {
-      globalunityinstance.SendMessage('bldg_f_1a','OnMouseDown');
-   }
-   function sendMessageToUnitydetail2() {
-      globalunityinstance.SendMessage('bldg_f_2','OnMouseDown');
-   }
-   function sendMessageToUnitydetail2b() {
-      globalunityinstance.SendMessage('bldg_f_2_b','OnMouseDown');
-   }
-   function sendMessageToUnitydetail3() {
-      globalunityinstance.SendMessage('amc_future','OnMouseDown');
-   }
-   function sendMessageToUnitydetail4() {
-      globalunityinstance.SendMessage('bldg_f_4','OnMouseDown');
-   }
-   function sendMessageToUnitydetail5() {
-      globalunityinstance.SendMessage('bldg_f_5','OnMouseDown');
-   }
-   function sendMessageToUnitydetail6() {
-      globalunityinstance.SendMessage('bldg_f_6','OnMouseDown');
-   }
-   function sendMessageToUnitydetail7() {
-      globalunityinstance.SendMessage('bldg_f_7','OnMouseDown');
-   }
-   function sendMessageToUnitydetail8() {
-      globalunityinstance.SendMessage('PH4abc','OnMouseDown');
-   }
-   function sendMessageToUnitydetail9() {
-      globalunityinstance.SendMessage('bldg_f_9','OnMouseDown');
-   }
-   function sendMessageToUnitydetail10() {
-      globalunityinstance.SendMessage('bldg_f_10','OnMouseDown');
-   }
-   */
-   //
+   
+   /* not needed
    function sendMessageToUnityCloseAll() {
 ////      globalunityinstance.SendMessage('Bridge','CloseAll');
         if (b109_on == true) {
@@ -251,99 +142,22 @@
         if (b140_on == true) {
           $("#B140")[0].click();
         }
-        if (phase_4_on == true) {
-          $("#phase-4-button")[0].click();
-        }
-        if (phase_5_on == true) {
-          $("#phase-5-button")[0].click();
-        }
-        if (phase_6_on == true) {
-          $("#phase-6-button")[0].click();
-        }
-        if (phase_7_on == true) {
-          $("#phase-7-button")[0].click();
-        }
-        if (phase_8_on == true) {
-          $("#phase-8-button")[0].click();
-        }
-        if (phase_9_on == true) {
-          $("#phase-9-button")[0].click();
-        }
-        if (phase_10_on == true) {
-          $("#phase-10-button")[0].click();
-        }
-        if (phase_11_on == true) {
-          $("#phase-11-button")[0].click();
-        }
-        
+       
    }
-              function sendMessageToUnitySubwayOff() {
-      globalunityinstance.SendMessage('Bridge','SubwayOff');
-   }
-              function sendMessageToUnityView1() {
-      globalunityinstance.SendMessage('Bridge','View1');
-   }
-              function sendMessageToUnityView2() {
-      globalunityinstance.SendMessage('Bridge','View2');
-   }      
-              function sendMessageToUnityView3() {
-      globalunityinstance.SendMessage('Bridge','View3');
-   }    
-              function sendMessageToUnityView4() {
-      globalunityinstance.SendMessage('Bridge','View4');
-   }    
-              function sendMessageToUnityView5() {
-      globalunityinstance.SendMessage('Bridge','View5');
-   }   
-              function sendMessageToUnityView6() {
-      globalunityinstance.SendMessage('Bridge','View6');
-   } 
-            function sendMessageToUnityOrbit() {
-      globalunityinstance.SendMessage('Bridge','Orbit');
-   }
-
-//
-
+      */ 
 
 function KillIframe(){
   if ( $("#iframe99")[0].src.indexOf("B109") > 0){
-  	sendMessageToUnityGoBack();
+   sendMessageToUnityGoBack();
   }
   if ( $("#iframe99")[0].src.indexOf("B110") > 0){
-  	sendMessageToUnityGoBack();
+   sendMessageToUnityGoBack();
   }
   if ( $("#iframe99")[0].src.indexOf("B112") > 0){
-  	sendMessageToUnityGoBack();
+   sendMessageToUnityGoBack();
   }
    if ( $("#iframe99")[0].src.indexOf("B140") > 0){
    sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("east-end") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("terrace-c") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("j-block") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("leesburg-pike") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("lux-entry") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("terrace-a") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("pearl-parcel") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("fashion-blvd") > 0){
-  	sendMessageToUnityGoBack();
-  }
-  if ( $("#iframe99")[0].src.indexOf("overview") > 0){
-    sendMessageToUnityGoBack();
   }
   $("#iframe99")[0].src ="";
 }
