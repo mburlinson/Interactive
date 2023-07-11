@@ -81,10 +81,10 @@ div.fs-3dglobe-arrow_box {
   position: absolute;
   overflow: hidden;
   z-index: 10000;
-  padding-top: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
   text-decoration: none;
 }
 .fs-3dglobe-labels > div:hover .fs-3dglobe-info-box {
