@@ -80,7 +80,7 @@ div.fs-3dglobe-arrow_box {
   transform: translateX(-50%);
   position: absolute;
   overflow: hidden;
-  z-index: 5000;
+  z-index: 10000;
   padding-top: 15px;
   padding-right: 15px;
   padding-bottom: 15px;
