@@ -90,6 +90,8 @@ div.fs-3dglobe-arrow_box {
 .fs-3dglobe-labels > div:hover .fs-3dglobe-info-box {
   display: block;
   cursor: pointer;
+  text-decoration: none;
+
 }
 .finsweet-globe {
   height: 100%;
