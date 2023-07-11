@@ -333,7 +333,7 @@ function getInfoBox({ url, name, location = 'N/A', role = 'N/A' }) {
     </div>
     <div style="padding:5px 10px">
       <div>
-        <strong>${name}</strong>
+        <strong style="text-decoration: none;">${name}</strong>
       </div>
       <div style="text-decoration: none;">Javascript, Node.js</div>
       <div style="text-decoration: none;">${location}</div>
