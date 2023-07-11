@@ -327,7 +327,7 @@ function FsGlobe() {
 function getInfoBox({ url, name, location = 'N/A', role = 'N/A' }) {
   return `
 
-  <div style=" border: 1px solid #dadce0; border-radius: 8px; overflow: hidden;">
+  <div style=" border: 10px solid #dadce0; border-radius: 8px; overflow: hidden;">
     <div class="caption">
       <img src="${url}" style="height: 200px; max-width:600px;" />
     </div>
@@ -335,8 +335,8 @@ function getInfoBox({ url, name, location = 'N/A', role = 'N/A' }) {
       <div>
         <strong>${name}</strong>
       </div>
-      <div>Javascript, Node.js</div>
-      <div>${location}</div>
+      <div style="text-decoration: none;">Javascript, Node.js</div>
+      <div style="text-decoration: none;">${location}</div>
     </div>
   </div>
  `;
