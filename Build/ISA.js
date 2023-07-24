@@ -1,6 +1,6 @@
 
 
-      var baseURL = "https://global-dashboard-1.webflow.io/";
+      var baseURL = "https://global-dashboard-1.com/";
       var buildUrl = "https://mburlinson.github.io/Interactive/Build";
       var globalunityinstance = null;
       var loaderUrl = buildUrl + "/ISAc3.loader.js";
